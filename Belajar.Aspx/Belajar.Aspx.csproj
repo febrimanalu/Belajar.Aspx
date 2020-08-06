@@ -82,6 +82,8 @@
     <Content Include="bootstrap4\js\bootstrap.min.js" />
     <Content Include="Dashboard.aspx" />
     <Content Include="img\flex.png" />
+    <Content Include="img\lock.png" />
+    <Content Include="img\person.png" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
