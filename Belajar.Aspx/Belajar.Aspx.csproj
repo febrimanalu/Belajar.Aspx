@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Status.aspx" />
     <Content Include="additional file\css\global.css" />
     <Content Include="additional file\js\jquery-3.5.1.slim.min.js" />
     <Content Include="additional file\js\popper.min.js" />
@@ -81,6 +82,7 @@
     <Content Include="bootstrap4\js\bootstrap.js" />
     <Content Include="bootstrap4\js\bootstrap.min.js" />
     <Content Include="Dashboard.aspx" />
+    <Content Include="Email.aspx" />
     <Content Include="img\flex.png" />
     <Content Include="img\lock.png" />
     <Content Include="img\person.png" />
@@ -88,6 +90,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Status.aspx.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Status.aspx.designer.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+    </Compile>
     <Compile Include="classes\ClsLogin.cs" />
     <Compile Include="classes\ClsModule.cs" />
     <Compile Include="Dashboard.aspx.cs">
@@ -96,6 +105,13 @@
     </Compile>
     <Compile Include="Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Email.aspx.cs">
+      <DependentUpon>Email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Email.aspx.designer.cs">
+      <DependentUpon>Email.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

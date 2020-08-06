@@ -32,9 +32,8 @@
             </div>
             <div class="col-md-4 col-sm-12"></div>
 
+            </div>
         </div>
-    </div>
-
     <script src="bootstrap4/js/bootstrap.min.js"></script>
 </body>
 </html>

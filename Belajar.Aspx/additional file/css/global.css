@@ -17,7 +17,10 @@
 }
 
 .bd {
-    background-color:deepskyblue
+    background-color: deepskyblue;
+    background-repeat: no-repeat;
+    background-size: auto;
+    height: 100vh;
 }
 
 .boxDiv {
