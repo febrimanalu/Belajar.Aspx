@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using Belajar.Aspx.classes;
 
 namespace Belajar.Aspx
 {
@@ -11,7 +13,13 @@ namespace Belajar.Aspx
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            DtStatus();
+        }
 
+        private void DtStatus()
+        {
+            DataTable dtStatus = new DataTable();
+            dtStatus = ClsStatus.DtStatus();
         }
     }
 }

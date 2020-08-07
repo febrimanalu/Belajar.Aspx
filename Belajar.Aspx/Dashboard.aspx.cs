@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Belajar.Aspx
+namespace Belajar.Aspx 
 {
     public partial class Dashboard : System.Web.UI.Page
     {
