@@ -249,13 +249,13 @@ namespace Belajar.Aspx
         protected global::System.Web.UI.WebControls.Label Label12;
 
         /// <summary>
-        /// TextBox1 control.
+        /// txtEditSN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtEditSN;
 
         /// <summary>
         /// Label13 control.
@@ -267,13 +267,13 @@ namespace Belajar.Aspx
         protected global::System.Web.UI.WebControls.Label Label13;
 
         /// <summary>
-        /// TextBox2 control.
+        /// txtEditDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox txtEditDesc;
 
         /// <summary>
         /// Label14 control.
@@ -285,13 +285,13 @@ namespace Belajar.Aspx
         protected global::System.Web.UI.WebControls.Label Label14;
 
         /// <summary>
-        /// TextBox3 control.
+        /// txtEditFam control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox txtEditFam;
 
         /// <summary>
         /// Label15 control.
@@ -303,13 +303,13 @@ namespace Belajar.Aspx
         protected global::System.Web.UI.WebControls.Label Label15;
 
         /// <summary>
-        /// TextBox4 control.
+        /// txtEditBU control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox txtEditBU;
 
         /// <summary>
         /// Label16 control.
@@ -321,13 +321,13 @@ namespace Belajar.Aspx
         protected global::System.Web.UI.WebControls.Label Label16;
 
         /// <summary>
-        /// TextBox5 control.
+        /// txtEditBULine control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox txtEditBULine;
 
         /// <summary>
         /// Label17 control.
@@ -339,13 +339,13 @@ namespace Belajar.Aspx
         protected global::System.Web.UI.WebControls.Label Label17;
 
         /// <summary>
-        /// DropDownList1 control.
+        /// ddlEditStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlEditStatus;
 
         /// <summary>
         /// Label18 control.
@@ -357,13 +357,13 @@ namespace Belajar.Aspx
         protected global::System.Web.UI.WebControls.Label Label18;
 
         /// <summary>
-        /// TextBox6 control.
+        /// txtEditOE control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox txtEditOE;
 
         /// <summary>
         /// Label19 control.
@@ -375,13 +375,13 @@ namespace Belajar.Aspx
         protected global::System.Web.UI.WebControls.Label Label19;
 
         /// <summary>
-        /// TextBox7 control.
+        /// txtEditRFID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::System.Web.UI.WebControls.TextBox txtEditRFID;
 
         /// <summary>
         /// Label20 control.
@@ -393,13 +393,13 @@ namespace Belajar.Aspx
         protected global::System.Web.UI.WebControls.Label Label20;
 
         /// <summary>
-        /// TextBox8 control.
+        /// txtEditCO control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox8;
+        protected global::System.Web.UI.WebControls.TextBox txtEditCO;
 
         /// <summary>
         /// Label21 control.
@@ -411,13 +411,13 @@ namespace Belajar.Aspx
         protected global::System.Web.UI.WebControls.Label Label21;
 
         /// <summary>
-        /// TextBox9 control.
+        /// txtEditEAM control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox9;
+        protected global::System.Web.UI.WebControls.TextBox txtEditEAM;
 
         /// <summary>
         /// Label22 control.
@@ -429,21 +429,30 @@ namespace Belajar.Aspx
         protected global::System.Web.UI.WebControls.Label Label22;
 
         /// <summary>
-        /// TextBox10 control.
+        /// txtEditAssetGD control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox10;
+        protected global::System.Web.UI.WebControls.TextBox txtEditAssetGD;
 
         /// <summary>
-        /// Button1 control.
+        /// btnDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnDelete;
+
+        /// <summary>
+        /// btnEdit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEdit;
     }
 }

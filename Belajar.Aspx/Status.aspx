@@ -80,7 +80,10 @@
                     <ItemTemplate>
                                 <tr>
                                     <td>
-                                        <a href="Edit_data" data-toggle="modal" data-target="#ModalEdit" class="btn btn-info btn-sm">+</a> 
+                                        <a id="Edit_data" data-toggle="modal" data-target="#ModalEdit" data-nomor="<%# Eval ("SN") %>" data-keterangan="<%# Eval ("Description") %>" 
+                                            data-keluarga="<%# Eval ("Family") %>" data-tempat="<%# Eval ("BU") %>" data-line="<%# Eval ("BU Line") %>" data-status="<%# Eval ("Status") %>" 
+                                            data-engineer="<%# Eval ("Owner Engineer") %>" data-rfid="<%# Eval ("RF ID") %>" data-co="<%# Eval ("CO") %>" data-eam="<%# Eval ("EAM") %>" 
+                                            data-asset="<%# Eval ("Asset Group Description") %>" class="btn btn-info btn-sm">+</a> 
                                     </td>
                                     <td><%# Eval ("SN") %></td>
                                     <td><%# Eval ("Description") %></td>
@@ -166,7 +169,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                            <asp:Button ID="btnSave" OnClick="btnSave_Click" CssClass="btn btn-info" runat="server" Text="Save" />
+                            <asp:Button ID="btnSave" OnClick="btnSave_Click" CssClass="btn btn-success" runat="server" Text="Save" />
                         </div>
                     </div>
                 </div>
@@ -177,7 +180,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header alert-info">
-                            <h5 class="modal-title" id="exampleModalLabel">Form Create Data</h5>
+                            <h5 class="modal-title">Form Create Data</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -185,27 +188,27 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <asp:Label ID="Label12" runat="server" Text="SN"></asp:Label>
-                                <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEditSN" ClientIDMode="Static" ReadOnly="true" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label13" runat="server" Text="Description"></asp:Label>
-                                <asp:TextBox ID="TextBox2" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEditDesc" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label14" runat="server" Text="Family"></asp:Label>
-                                <asp:TextBox ID="TextBox3" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEditFam" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label15" runat="server" Text="BU"></asp:Label>
-                                <asp:TextBox ID="TextBox4" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEditBU" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label16" runat="server" Text="BU Line"></asp:Label>
-                                <asp:TextBox ID="TextBox5" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEditBULine" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label17" runat="server" Text="Status"></asp:Label>
-                                <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server">
+                                <asp:DropDownList ID="ddlEditStatus" ClientIDMode="Static" CssClass="form-control" runat="server">
                                     <asp:ListItem>--Select Status--</asp:ListItem>
                                     <asp:ListItem>ACTIVE</asp:ListItem>
                                     <asp:ListItem>EOL</asp:ListItem>
@@ -215,28 +218,28 @@
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label18" runat="server" Text="Owner Engineer"></asp:Label>
-                                <asp:TextBox ID="TextBox6" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEditOE" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label19" runat="server" Text="RF ID"></asp:Label>
-                                <asp:TextBox ID="TextBox7" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEditRFID" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label20" runat="server" Text="CO"></asp:Label>
-                                <asp:TextBox ID="TextBox8" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEditCO" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label21" runat="server" Text="EAM"></asp:Label>
-                                <asp:TextBox ID="TextBox9" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEditEAM" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label22" runat="server" Text="Asset Group Description"></asp:Label>
-                                <asp:TextBox ID="TextBox10" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEditAssetGD" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                            <asp:Button ID="Button1" OnClick="btnSave_Click" CssClass="btn btn-info" runat="server" Text="Save" />
+                            <asp:Button ID="btnDelete" CssClass="btn btn-danger" runat="server" Text="Delete" />
+                            <asp:Button ID="btnEdit" CssClass="btn btn-success" runat="server" Text="Edit" />
                         </div>
                     </div>
                 </div>
@@ -252,6 +255,32 @@
         $(document).ready(function () {
             $('#myTable').DataTable();
         });
+
+        $(document).on("click", "#Edit_data", function () {
+            var _SN = $(this).data("nomor");
+            var _Description = $(this).data("keterangan");
+            var _Family = $(this).data("keluarga");
+            var _BU = $(this).data("tempat");
+            var _BU Line = $(this).data("line");
+            var _Status = $(this).data("status");
+            var _Owner Engineer = $(this).data("engineer");
+            var _RF ID = $(this).data("rfid");
+            var _CO = $(this).data("co");
+            var _EAM = $(this).data("eam");
+            var _Asset Group Description = $(this).data("asset");
+
+            $("#ModalEdit #txtEditSN").val(_SN);
+            $("#ModalEdit #txtEditDesc").val(_Description);
+            $("#ModalEdit #txtEditFam").val(_Family);
+            $("#ModalEdit #txtEditBU").val(_BU);
+            $("#ModalEdit #txtEditBULine").val(_BU Line);
+            $("#ModalEdit #ddlEditStatus").val(_Status);
+            $("#ModalEdit #txtEditOE").val(_Owner Engineer);
+            $("#ModalEdit #txtEditRFID").val(_RF ID);
+            $("#ModalEdit #txtEditCO").val(_CO);
+            $("#ModalEdit #txtEditEAM").val(_EAM);
+            $("#ModalEdit #txtEditAssetGD").val(_Asset Group Description);
+        })
     </script>
     </form>
 </body>

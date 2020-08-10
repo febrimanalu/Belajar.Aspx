@@ -53,5 +53,25 @@ namespace Belajar.Aspx.classes
                 throw ex;
             }
         }
+
+        public static void EditData(string SN, string Description, string Family, string BU, string BU_Line, string Status, string Owner_Engineer, string RF_ID, string CO, string EAM, string Asset_Group_Description)
+        {
+            try
+            {
+                SqlConnection sqlconn = new SqlConnection(ClsModule.conn.ToString());
+                SqlCommand sqlcmd = new SqlCommand();
+
+                sqlconn.Open();
+                sqlcmd.Connection = sqlconn;
+                sqlcmd.CommandType = CommandType.Text;
+                sqlcmd.CommandText = "";
+                sqlcmd.ExecuteNonQuery();
+                sqlconn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
