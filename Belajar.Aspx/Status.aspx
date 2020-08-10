@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="Belajar.Aspx.Dashboard" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Status.aspx.cs" Inherits="Belajar.Aspx.Status" %>
 
 <!DOCTYPE html>
 
@@ -32,7 +32,7 @@
                 </div>
             </nav>
         </header>
-        <main role="main">
+        <main>
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
                     <div class="boxDiv">
@@ -55,15 +55,16 @@
                     </div>
                 </div>
             </div>
-            <div class="container mt-5 md-5">
-                <asp:Repeater ID="Repeater1" runat="server">
+            <div class="container mt-5 mb-5">
+                <asp:Repeater ID="RptStatus" runat="server">
                     <HeaderTemplate>
-                        <table id="myTable" class="table table-hover table-bordered">
+                        <table id="myTable" class="table table-striped table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <th>No</th>
-                                    <th>S/N</th>
+                                    <th>RN</th>
+                                    <th>SN</th>
                                     <th>Description</th>
+                                    <th>Family</th>
                                     <th>BU</th>
                                     <th>BU Line</th>
                                     <th>Status</th>
@@ -77,27 +78,168 @@
                             <tbody>
                     </HeaderTemplate>
                     <ItemTemplate>
-                        <tr>
-                            <td>
-                                <a href="#" class="btn btn-info btn-sm">+</a>
-                            </td>
-                            <td><%# Eval("S/N") %></td>
-                            <td><%# Eval("Description") %></td>
-                            <td><%# Eval("BU") %></td>
-                            <td><%# Eval("BU Line") %></td>
-                            <td><%# Eval("Status") %></td>
-                            <td><%# Eval("Owner Engineer") %></td>
-                            <td><%# Eval("RF ID") %></td>
-                            <td><%# Eval("CO") %></td>
-                            <td><%# Eval("EAM") %></td>
-                            <td><%# Eval("Asset Group Description") %></td>
-                        </tr>
+                                <tr>
+                                    <td>
+                                        <a href="Edit_data" data-toggle="modal" data-target="#ModalEdit" class="btn btn-info btn-sm">+</a> 
+                                    </td>
+                                    <td><%# Eval ("SN") %></td>
+                                    <td><%# Eval ("Description") %></td>
+                                    <td><%# Eval ("Family") %></td>
+                                    <td><%# Eval ("BU") %></td>
+                                    <td><%# Eval ("BU Line") %></td>
+                                    <td><%# Eval ("Status") %></td>
+                                    <td><%# Eval ("Owner Engineer") %></td>
+                                    <td><%# Eval ("RF ID") %></td>
+                                    <td><%# Eval ("CO") %></td>
+                                    <td><%# Eval ("EAM") %></td>
+                                    <td><%# Eval ("Asset Group Description") %></td>
+                                </tr>
                     </ItemTemplate>
                     <FooterTemplate>
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
                     </FooterTemplate>
                 </asp:Repeater>
+                <button class="btn btn-info" type="button" data-target="#ModalCreate" data-toggle="modal">Create Data</button>
+            </div>
+            <!--Modal Create-->
+            <div class="modal fade" id="ModalCreate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header alert-info">
+                            <h5 class="modal-title" id="exampleModalLabel">Form Create Data</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <asp:Label ID="Label1" runat="server" Text="SN"></asp:Label>
+                                <asp:TextBox ID="txtSN" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Label2" runat="server" Text="Description"></asp:Label>
+                                <asp:TextBox ID="txtDesc" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Label3" runat="server" Text="Family"></asp:Label>
+                                <asp:TextBox ID="txtFam" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Label4" runat="server" Text="BU"></asp:Label>
+                                <asp:TextBox ID="txtBU" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Label5" runat="server" Text="BU Line"></asp:Label>
+                                <asp:TextBox ID="txtBULine" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Label6" runat="server" Text="Status"></asp:Label>
+                                <asp:DropDownList ID="ddlStatus" CssClass="form-control" runat="server">
+                                    <asp:ListItem>--Select Status--</asp:ListItem>
+                                    <asp:ListItem>ACTIVE</asp:ListItem>
+                                    <asp:ListItem>EOL</asp:ListItem>
+                                    <asp:ListItem>STORED</asp:ListItem>
+                                    <asp:ListItem>UNKNOWN</asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Label7" runat="server" Text="Owner Engineer"></asp:Label>
+                                <asp:TextBox ID="txtOE" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Label8" runat="server" Text="RF ID"></asp:Label>
+                                <asp:TextBox ID="txtRFID" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Label9" runat="server" Text="CO"></asp:Label>
+                                <asp:TextBox ID="txtCO" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Label10" runat="server" Text="EAM"></asp:Label>
+                                <asp:TextBox ID="txtEAM" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Label11" runat="server" Text="Asset Group Description"></asp:Label>
+                                <asp:TextBox ID="txtAssetGD" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            <asp:Button ID="btnSave" OnClick="btnSave_Click" CssClass="btn btn-info" runat="server" Text="Save" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Modal Edit-->
+            <div class="modal fade" id="ModalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header alert-info">
+                            <h5 class="modal-title" id="exampleModalLabel">Form Create Data</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <asp:Label ID="Label12" runat="server" Text="SN"></asp:Label>
+                                <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Label13" runat="server" Text="Description"></asp:Label>
+                                <asp:TextBox ID="TextBox2" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Label14" runat="server" Text="Family"></asp:Label>
+                                <asp:TextBox ID="TextBox3" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Label15" runat="server" Text="BU"></asp:Label>
+                                <asp:TextBox ID="TextBox4" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Label16" runat="server" Text="BU Line"></asp:Label>
+                                <asp:TextBox ID="TextBox5" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Label17" runat="server" Text="Status"></asp:Label>
+                                <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server">
+                                    <asp:ListItem>--Select Status--</asp:ListItem>
+                                    <asp:ListItem>ACTIVE</asp:ListItem>
+                                    <asp:ListItem>EOL</asp:ListItem>
+                                    <asp:ListItem>STORED</asp:ListItem>
+                                    <asp:ListItem>UNKNOWN</asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Label18" runat="server" Text="Owner Engineer"></asp:Label>
+                                <asp:TextBox ID="TextBox6" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Label19" runat="server" Text="RF ID"></asp:Label>
+                                <asp:TextBox ID="TextBox7" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Label20" runat="server" Text="CO"></asp:Label>
+                                <asp:TextBox ID="TextBox8" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Label21" runat="server" Text="EAM"></asp:Label>
+                                <asp:TextBox ID="TextBox9" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <asp:Label ID="Label22" runat="server" Text="Asset Group Description"></asp:Label>
+                                <asp:TextBox ID="TextBox10" CssClass="form-control" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            <asp:Button ID="Button1" OnClick="btnSave_Click" CssClass="btn btn-info" runat="server" Text="Save" />
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
         <footer></footer>
