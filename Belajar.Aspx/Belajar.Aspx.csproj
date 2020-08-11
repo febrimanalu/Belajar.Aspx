@@ -84,11 +84,7 @@
     <Content Include="bootstrap4\js\bootstrap.min.js" />
     <Content Include="Dashboard.aspx" />
     <Content Include="Email.aspx" />
-    <Content Include="img\delete.png" />
-    <Content Include="img\edit.png" />
     <Content Include="img\flex.png" />
-    <Content Include="img\lock.png" />
-    <Content Include="img\person.png" />
     <Content Include="Login.aspx" />
     <Content Include="Status.aspx" />
     <Content Include="Web.config" />

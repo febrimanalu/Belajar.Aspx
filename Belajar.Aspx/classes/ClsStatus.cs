@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -54,7 +54,7 @@ namespace Belajar.Aspx.classes
             }
         }
 
-        public static void EditData(string SN, string Description, string Family, string BU, string BU_Line, string Status, string Owner_Engineer, string RF_ID, string CO, string EAM, string Asset_Group_Description)
+        public static void EditData(string desc, string fam, string bu, string line, string status, string oe, string rfid, string co, string eam, string agd, string no)
         {
             try
             {
@@ -64,7 +64,27 @@ namespace Belajar.Aspx.classes
                 sqlconn.Open();
                 sqlcmd.Connection = sqlconn;
                 sqlcmd.CommandType = CommandType.Text;
-                sqlcmd.CommandText = "";
+                sqlcmd.CommandText = "update Status set Description ='"+desc+"', Family ='"+fam+"', BU ='"+bu+"', BU_Line ='"+line+"', Status ='"+status+"', Owner_Engineer ='"+oe+"', RF_ID ='"+rfid+ "', CO='"+co+"', EAM ='"+eam+ "', Asset_Group_Description ='" + agd+"' where SN ='"+no+"' ";
+                sqlcmd.ExecuteNonQuery();
+                sqlconn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static void DeleteData(string no)
+        {
+            try
+            {
+                SqlConnection sqlconn = new SqlConnection(ClsModule.conn.ToString());
+                SqlCommand sqlcmd = new SqlCommand();
+
+                sqlconn.Open();
+                sqlcmd.Connection = sqlconn;
+                sqlcmd.CommandType = CommandType.Text;
+                sqlcmd.CommandText = "delete from Status where SN ='" + no + "' ";
                 sqlcmd.ExecuteNonQuery();
                 sqlconn.Close();
             }

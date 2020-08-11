@@ -31,10 +31,10 @@ namespace Belajar.Aspx
         {
             ClsStatus.SaveData(txtSN.Text, txtDesc.Text, txtFam.Text, ddlBU.SelectedValue, txtBULine.Text, ddlStatus.SelectedValue, txtOE.Text, txtRFID.Text, txtCO.Text, txtEAM.Text, txtAssetGD.Text);
             DtStatus();
-            Delete();
+            Bersih();
         }
 
-        public void Delete()
+        public void Bersih()
         {
             txtSN.Text = string.Empty;
             txtDesc.Text = string.Empty;
@@ -47,6 +47,20 @@ namespace Belajar.Aspx
             txtCO.Text = string.Empty;
             txtEAM.Text = string.Empty;
             txtAssetGD.Text = string.Empty;
+        }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            ClsStatus.EditData(txtEditDesc.Text, txtEditFam.Text, ddlEditBU.SelectedValue, txtEditLine.Text, ddlEditStatus.SelectedValue, txtEditOE.Text, txtEditRFID.Text, txtEditCO.Text, txtEditEAM.Text, txtEditAGD.Text, Convert.ToString(txtEditSN.Text));
+            DtStatus();
+            Bersih();
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            ClsStatus.DeleteData(Convert.ToString(txtEditSN));
+            DtStatus();
+            Bersih();
         }
     }
 }
