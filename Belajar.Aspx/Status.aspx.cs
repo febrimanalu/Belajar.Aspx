@@ -29,7 +29,7 @@ namespace Belajar.Aspx
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            ClsStatus.SaveData(txtSN.Text, txtDesc.Text, txtFam.Text, txtBU.Text, txtBULine.Text, ddlStatus.SelectedValue, txtOE.Text, txtRFID.Text, txtCO.Text, txtEAM.Text, txtAssetGD.Text);
+            ClsStatus.SaveData(txtSN.Text, txtDesc.Text, txtFam.Text, ddlBU.SelectedValue, txtBULine.Text, ddlStatus.SelectedValue, txtOE.Text, txtRFID.Text, txtCO.Text, txtEAM.Text, txtAssetGD.Text);
             DtStatus();
             Delete();
         }
@@ -39,7 +39,7 @@ namespace Belajar.Aspx
             txtSN.Text = string.Empty;
             txtDesc.Text = string.Empty;
             txtFam.Text = string.Empty;
-            txtBU.Text = string.Empty;
+            ddlBU.SelectedValue = "--Select Status--";
             txtBULine.Text = string.Empty;
             ddlStatus.SelectedValue = "--Select Status--";
             txtOE.Text = string.Empty;

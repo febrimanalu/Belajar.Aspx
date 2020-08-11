@@ -55,13 +55,13 @@
                     </div>
                 </div>
             </div>
-            <div class="container mt-5 mb-5">
+            <div class="ml-5 mt-5 mr-5 mb-5">
                 <asp:Repeater ID="RptStatus" runat="server">
                     <HeaderTemplate>
                         <table id="myTable" class="table table-striped table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <th>RN</th>
+                                    <th>No</th>
                                     <th>SN</th>
                                     <th>Description</th>
                                     <th>Family</th>
@@ -73,6 +73,8 @@
                                     <th>CO</th>
                                     <th>EAM</th>
                                     <th>Asset Group Description</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -80,10 +82,12 @@
                     <ItemTemplate>
                                 <tr>
                                     <td>
-                                        <a id="Edit_data" data-toggle="modal" data-target="#ModalEdit" data-nomor="<%# Eval ("SN") %>" data-keterangan="<%# Eval ("Description") %>" 
-                                            data-keluarga="<%# Eval ("Family") %>" data-tempat="<%# Eval ("BU") %>" data-line="<%# Eval ("BU Line") %>" data-status="<%# Eval ("Status") %>" 
-                                            data-engineer="<%# Eval ("Owner Engineer") %>" data-rfid="<%# Eval ("RF ID") %>" data-co="<%# Eval ("CO") %>" data-eam="<%# Eval ("EAM") %>" 
-                                            data-asset="<%# Eval ("Asset Group Description") %>" class="btn btn-info btn-sm">+</a> 
+                                        <a id="Detail_data" data-toggle="modal" data-target="#ModalDetail" onclick="Detail_data" class="alert-info">
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+                                            <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+                                        </svg>
+                                        </a> 
                                     </td>
                                     <td><%# Eval ("SN") %></td>
                                     <td><%# Eval ("Description") %></td>
@@ -96,6 +100,22 @@
                                     <td><%# Eval ("CO") %></td>
                                     <td><%# Eval ("EAM") %></td>
                                     <td><%# Eval ("Asset Group Description") %></td>
+                                    <td>
+                                        <a id="Edit_data" data-toggle="modal" data-target="#ModalEdit" onclick="Edit_data" class="alert-info" >
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                        </svg>
+                                        </a> 
+                                    </td>
+                                    <td>
+                                        <a id="Delete_data" data-toggle="modal" data-target="#ModalDelete" onclick="Delete_data" class="alert-info" >
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                        </svg>
+                                        </a> 
+                                    </td>
                                 </tr>
                     </ItemTemplate>
                     <FooterTemplate>
@@ -130,7 +150,14 @@
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label4" runat="server" Text="BU"></asp:Label>
-                                <asp:TextBox ID="txtBU" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:DropDownList ID="ddlBU" CssClass="form-control" runat="server">
+                                    <asp:ListItem>--Select Status--</asp:ListItem>
+                                    <asp:ListItem>BU 1</asp:ListItem>
+                                    <asp:ListItem>BU 2</asp:ListItem>
+                                    <asp:ListItem>BU 3</asp:ListItem>
+                                    <asp:ListItem>WAREHOUSE</asp:ListItem>
+                                    <asp:ListItem>CUSTOMER SITE</asp:ListItem>
+                                </asp:DropDownList>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label5" runat="server" Text="BU Line"></asp:Label>
@@ -180,7 +207,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header alert-info">
-                            <h5 class="modal-title">Form Create Data</h5>
+                            <h5 class="modal-title">Form Edit Data</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -188,7 +215,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <asp:Label ID="Label12" runat="server" Text="SN"></asp:Label>
-                                <asp:TextBox ID="txtEditSN" ClientIDMode="Static" ReadOnly="true" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEditSN" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label13" runat="server" Text="Description"></asp:Label>
@@ -200,15 +227,22 @@
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label15" runat="server" Text="BU"></asp:Label>
-                                <asp:TextBox ID="txtEditBU" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:DropDownList ID="ddlEditBU" ClientIDMode="Static" CssClass="form-control" runat="server">
+                                    <asp:ListItem>--Select Status--</asp:ListItem>
+                                    <asp:ListItem>BU 1</asp:ListItem>
+                                    <asp:ListItem>BU 2</asp:ListItem>
+                                    <asp:ListItem>BU 3</asp:ListItem>
+                                    <asp:ListItem>WAREHOUSE</asp:ListItem>
+                                    <asp:ListItem>CUSTOMER SITE</asp:ListItem>
+                                </asp:DropDownList>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label16" runat="server" Text="BU Line"></asp:Label>
-                                <asp:TextBox ID="txtEditBULine" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox4" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label17" runat="server" Text="Status"></asp:Label>
-                                <asp:DropDownList ID="ddlEditStatus" ClientIDMode="Static" CssClass="form-control" runat="server">
+                                <asp:DropDownList ID="DropDownList2" CssClass="form-control" runat="server">
                                     <asp:ListItem>--Select Status--</asp:ListItem>
                                     <asp:ListItem>ACTIVE</asp:ListItem>
                                     <asp:ListItem>EOL</asp:ListItem>
@@ -218,32 +252,38 @@
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label18" runat="server" Text="Owner Engineer"></asp:Label>
-                                <asp:TextBox ID="txtEditOE" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox5" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label19" runat="server" Text="RF ID"></asp:Label>
-                                <asp:TextBox ID="txtEditRFID" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox6" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label20" runat="server" Text="CO"></asp:Label>
-                                <asp:TextBox ID="txtEditCO" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox7" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label21" runat="server" Text="EAM"></asp:Label>
-                                <asp:TextBox ID="txtEditEAM" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox8" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label22" runat="server" Text="Asset Group Description"></asp:Label>
-                                <asp:TextBox ID="txtEditAssetGD" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox9" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <asp:Button ID="btnDelete" CssClass="btn btn-danger" runat="server" Text="Delete" />
-                            <asp:Button ID="btnEdit" CssClass="btn btn-success" runat="server" Text="Edit" />
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            <asp:Button ID="Button1" OnClick="btnSave_Click" CssClass="btn btn-success" runat="server" Text="Save" />
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!--Modal Delete-->
+            <div class="modal fade" id="ModalDelete">
+
+            </div>
+
         </main>
         <footer></footer>
 
@@ -255,32 +295,6 @@
         $(document).ready(function () {
             $('#myTable').DataTable();
         });
-
-        $(document).on("click", "#Edit_data", function () {
-            var _SN = $(this).data("nomor");
-            var _Description = $(this).data("keterangan");
-            var _Family = $(this).data("keluarga");
-            var _BU = $(this).data("tempat");
-            var _BU Line = $(this).data("line");
-            var _Status = $(this).data("status");
-            var _Owner Engineer = $(this).data("engineer");
-            var _RF ID = $(this).data("rfid");
-            var _CO = $(this).data("co");
-            var _EAM = $(this).data("eam");
-            var _Asset Group Description = $(this).data("asset");
-
-            $("#ModalEdit #txtEditSN").val(_SN);
-            $("#ModalEdit #txtEditDesc").val(_Description);
-            $("#ModalEdit #txtEditFam").val(_Family);
-            $("#ModalEdit #txtEditBU").val(_BU);
-            $("#ModalEdit #txtEditBULine").val(_BU Line);
-            $("#ModalEdit #ddlEditStatus").val(_Status);
-            $("#ModalEdit #txtEditOE").val(_Owner Engineer);
-            $("#ModalEdit #txtEditRFID").val(_RF ID);
-            $("#ModalEdit #txtEditCO").val(_CO);
-            $("#ModalEdit #txtEditEAM").val(_EAM);
-            $("#ModalEdit #txtEditAssetGD").val(_Asset Group Description);
-        })
     </script>
     </form>
 </body>
