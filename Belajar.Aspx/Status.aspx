@@ -331,7 +331,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <asp:Button ID="btnCancel" CssClass="btn btn-secondary" runat="server" Text="Cancel" />
+                            <asp:Button ID="btnDelete" OnClick="btnDelete_Click" CssClass="btn btn-danger" runat="server" Text="Delete" />
                             <asp:Button ID="btnEdit" OnClick="btnEdit_Click" CssClass="btn btn-success" runat="server" Text="Save" />
                         </div>
                     </div>
@@ -350,8 +350,8 @@
                         </div>
                         <div class="modal-body">Are you sure to delete this data?</div>
                         <div class="modal-footer">
-                            <button type="btnCancel" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="btnDelete" onclick="btnDelete_Click" class="btn btn-danger">Yes</button>
+                            <asp:Button ID="btnCancel" CssClass="btn btn-secondary" runat="server" Text="Cancel" />
+                            <asp:Button ID="btndel" CssClass="btn btn-danger" runat="server" Text="Yes" />
                         </div>
                     </div>
                 </div>
@@ -393,10 +393,6 @@
             $("#ModalEdit #txtEditEAM").val(_eam);
             $("#ModalEdit #txtEditAGD").val(_agd);
             $("#ModalEdit #txtEditSN").attr("ReadOnly", true);;
-        });
-
-        $(document).ready(function () {
-            $('#Delete_Data').DataTable();
         });
     </script>
     </form>

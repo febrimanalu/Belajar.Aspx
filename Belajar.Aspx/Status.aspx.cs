@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 using Belajar.Aspx.classes;
 
 namespace Belajar.Aspx
@@ -58,7 +60,7 @@ namespace Belajar.Aspx
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
-            ClsStatus.DeleteData(txtEditDesc.Text, txtEditFam.Text, ddlEditBU.SelectedValue, txtEditLine.Text, ddlEditStatus.SelectedValue, txtEditOE.Text, txtEditRFID.Text, txtEditCO.Text, txtEditEAM.Text, txtEditAGD.Text, Convert.ToString(txtEditSN.Text));
+            ClsStatus.DeleteData(Convert.ToString(txtEditSN.Text));
             DtStatus();
             Clear();
         }
