@@ -84,7 +84,7 @@ namespace Belajar.Aspx.classes
                 sqlconn.Open();
                 sqlcmd.Connection = sqlconn;
                 sqlcmd.CommandType = CommandType.Text;
-                sqlcmd.CommandText = "delete from Status where SN ='" + no + "' ";
+                sqlcmd.CommandText = "delete * from Status order by SN ";
                 sqlcmd.ExecuteNonQuery();
                 sqlconn.Close();
             }

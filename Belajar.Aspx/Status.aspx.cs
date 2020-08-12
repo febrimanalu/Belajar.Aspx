@@ -58,7 +58,7 @@ namespace Belajar.Aspx
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
-            ClsStatus.DeleteData(Convert.ToString(txtEditSN));
+            ClsStatus.DeleteData(txtEditDesc.Text, txtEditFam.Text, ddlEditBU.SelectedValue, txtEditLine.Text, ddlEditStatus.SelectedValue, txtEditOE.Text, txtEditRFID.Text, txtEditCO.Text, txtEditEAM.Text, txtEditAGD.Text, Convert.ToString(txtEditSN.Text));
             DtStatus();
             Clear();
         }

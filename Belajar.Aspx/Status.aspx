@@ -111,9 +111,7 @@
                                         </a> 
                                     </td>
                                     <td>
-                                        <a id="Delete_data" data-toggle="modal" data-target="#ModalDelete" onclick="btnDelete_Click" class="alert-info" data-id="<%# Eval("SN") %>"
-                                        data-nama="<%# Eval("Description") %>" data-fam="<%# Eval("Family") %>" data-bu="<%# Eval("BU") %>" data-line="<%# Eval("BU_Line") %>" data-status="<%# Eval("Status") %>"
-                                        data-oe="<%# Eval("Owner_Engineer") %>" data-rfid="<%# Eval("RF_ID") %>" data-co="<%# Eval("SN") %>" data-eam="<%# Eval("EAM") %>" data-agd="<%# Eval("Asset_Group_Description") %>">
+                                        <a id="Delete_data" data-toggle="modal" data-target="#ModalDelete" onclick="Delete_data" class="alert-info">
                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                                             <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
@@ -342,6 +340,21 @@
 
             <!--Modal Delete-->
             <div class="modal fade" id="ModalDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header alert-danger">
+                            <h5 class="modal-title">Warning</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Are you sure to delete this data?</div>
+                        <div class="modal-footer">
+                            <button type="btnCancel" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="btnDelete" onclick="btnDelete_Click" class="btn btn-danger">Yes</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
         <footer></footer>
@@ -382,19 +395,9 @@
             $("#ModalEdit #txtEditSN").attr("ReadOnly", true);;
         });
 
-        $(document).on("click", "#Delete_data", function () {
-            var _no = $(this).data("id");
-            var _desc = $(this).data("nama");
-            var _fam = $(this).data("fam");
-            var _bu = $(this).data("bu");
-            var _line = $(this).data("line");
-            var _status = $(this).data("status");
-            var _oe = $(this).data("oe");
-            var _rfid = $(this).data("rfid");
-            var _co = $(this).data("co");
-            var _eam = $(this).data("eam");
-            var _agd = $(this).data("agd");
-        }
+        $(document).ready(function () {
+            $('#Delete_Data').DataTable();
+        });
     </script>
     </form>
 </body>
