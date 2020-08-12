@@ -74,7 +74,7 @@ namespace Belajar.Aspx.classes
             }
         }
 
-        public static void DeleteData(string no)
+        public static void DeleteData(string desc, string fam, string bu, string line, string status, string oe, string rfid, string co, string eam, string agd, string no)
         {
             try
             {

@@ -111,7 +111,9 @@
                                         </a> 
                                     </td>
                                     <td>
-                                        <a id="Delete_data" data-toggle="modal" data-target="#ModalDelete" onclick="btnDelete_Click" class="alert-info" >
+                                        <a id="Delete_data" data-toggle="modal" data-target="#ModalDelete" onclick="btnDelete_Click" class="alert-info" data-id="<%# Eval("SN") %>"
+                                        data-nama="<%# Eval("Description") %>" data-fam="<%# Eval("Family") %>" data-bu="<%# Eval("BU") %>" data-line="<%# Eval("BU_Line") %>" data-status="<%# Eval("Status") %>"
+                                        data-oe="<%# Eval("Owner_Engineer") %>" data-rfid="<%# Eval("RF_ID") %>" data-co="<%# Eval("SN") %>" data-eam="<%# Eval("EAM") %>" data-agd="<%# Eval("Asset_Group_Description") %>">
                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                                             <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
@@ -223,17 +225,19 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                             <asp:Button ID="btnSave" OnClick="btnSave_Click" CssClass="btn btn-success" runat="server" Text="Save" />
                         </div>
-                    </div>
                 </div>
             </div>
+            </div>
+
 
             <!--Modal Edit-->
             <div class="modal fade" id="ModalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header alert-info">
                             <h5 class="modal-title">Form Edit Data</h5>
@@ -242,62 +246,90 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <div class="form-group">
-                                <asp:Label ID="Label12" runat="server" Text="SN"></asp:Label>
-                                <asp:TextBox ID="txtEditSN" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="form-group">
-                                <asp:Label ID="Label13" runat="server" Text="Description"></asp:Label>
-                                <asp:TextBox ID="txtEditDesc" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="form-group">
-                                <asp:Label ID="Label14" runat="server" Text="Family"></asp:Label>
-                                <asp:TextBox ID="txtEditFam" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="form-group">
-                                <asp:Label ID="Label15" runat="server" Text="BU"></asp:Label>
-                                <asp:DropDownList ID="ddlEditBU" ClientIDMode="Static" CssClass="form-control" runat="server">
-                                    <asp:ListItem>--Select Status--</asp:ListItem>
-                                    <asp:ListItem>BU 1</asp:ListItem>
-                                    <asp:ListItem>BU 2</asp:ListItem>
-                                    <asp:ListItem>BU 3</asp:ListItem>
-                                    <asp:ListItem>WAREHOUSE</asp:ListItem>
-                                    <asp:ListItem>CUSTOMER SITE</asp:ListItem>
-                                </asp:DropDownList>
-                            </div>
-                            <div class="form-group">
-                                <asp:Label ID="Label16" runat="server" Text="BU Line"></asp:Label>
-                                <asp:TextBox ID="txtEditLine" CssClass="form-control" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="form-group">
-                                <asp:Label ID="Label17" runat="server" Text="Status"></asp:Label>
-                                <asp:DropDownList ID="ddlEditStatus" CssClass="form-control" runat="server">
-                                    <asp:ListItem>--Select Status--</asp:ListItem>
-                                    <asp:ListItem>ACTIVE</asp:ListItem>
-                                    <asp:ListItem>EOL</asp:ListItem>
-                                    <asp:ListItem>STORED</asp:ListItem>
-                                    <asp:ListItem>UNKNOWN</asp:ListItem>
-                                </asp:DropDownList>
-                            </div>
-                            <div class="form-group">
-                                <asp:Label ID="Label18" runat="server" Text="Owner Engineer"></asp:Label>
-                                <asp:TextBox ID="txtEditOE" CssClass="form-control" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="form-group">
-                                <asp:Label ID="Label19" runat="server" Text="RF ID"></asp:Label>
-                                <asp:TextBox ID="txtEditRFID" CssClass="form-control" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="form-group">
-                                <asp:Label ID="Label20" runat="server" Text="CO"></asp:Label>
-                                <asp:TextBox ID="txtEditCO" CssClass="form-control" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="form-group">
-                                <asp:Label ID="Label21" runat="server" Text="EAM"></asp:Label>
-                                <asp:TextBox ID="txtEditEAM" CssClass="form-control" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="form-group">
-                                <asp:Label ID="Label22" runat="server" Text="Asset Group Description"></asp:Label>
-                                <asp:TextBox ID="txtEditAGD" CssClass="form-control" runat="server"></asp:TextBox>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <asp:Label ID="Label12" runat="server" Text="SN"></asp:Label>
+                                                <asp:TextBox ID="txtEditSN" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <asp:Label ID="Label13" runat="server" Text="Description"></asp:Label>
+                                                <asp:TextBox ID="txtEditDesc" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <asp:Label ID="Label14" runat="server" Text="Family"></asp:Label>
+                                                <asp:TextBox ID="txtEditFam" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <asp:Label ID="Label15" runat="server" Text="BU"></asp:Label>
+                                                <asp:DropDownList ID="ddlEditBU" ClientIDMode="Static" CssClass="form-control" runat="server">
+                                                    <asp:ListItem>--Select Status--</asp:ListItem>
+                                                    <asp:ListItem>BU 1</asp:ListItem>
+                                                    <asp:ListItem>BU 2</asp:ListItem>
+                                                    <asp:ListItem>BU 3</asp:ListItem>
+                                                    <asp:ListItem>WAREHOUSE</asp:ListItem>
+                                                    <asp:ListItem>CUSTOMER SITE</asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <asp:Label ID="Label16" runat="server" Text="BU Line"></asp:Label>
+                                                <asp:TextBox ID="txtEditLine" CssClass="form-control" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <asp:Label ID="Label17" runat="server" Text="Status"></asp:Label>
+                                                <asp:DropDownList ID="ddlEditStatus" CssClass="form-control" runat="server">
+                                                    <asp:ListItem>--Select Status--</asp:ListItem>
+                                                    <asp:ListItem>ACTIVE</asp:ListItem>
+                                                    <asp:ListItem>EOL</asp:ListItem>
+                                                    <asp:ListItem>STORED</asp:ListItem>
+                                                    <asp:ListItem>UNKNOWN</asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <asp:Label ID="Label18" runat="server" Text="Owner Engineer"></asp:Label>
+                                                <asp:TextBox ID="txtEditOE" CssClass="form-control" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <asp:Label ID="Label19" runat="server" Text="RF ID"></asp:Label>
+                                                <asp:TextBox ID="txtEditRFID" CssClass="form-control" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <asp:Label ID="Label20" runat="server" Text="CO"></asp:Label>
+                                                <asp:TextBox ID="txtEditCO" CssClass="form-control" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <asp:Label ID="Label21" runat="server" Text="EAM"></asp:Label>
+                                                <asp:TextBox ID="txtEditEAM" CssClass="form-control" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <asp:Label ID="Label22" runat="server" Text="Asset Group Description"></asp:Label>
+                                                <asp:TextBox ID="txtEditAGD" CssClass="form-control" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -348,7 +380,21 @@
             $("#ModalEdit #txtEditEAM").val(_eam);
             $("#ModalEdit #txtEditAGD").val(_agd);
             $("#ModalEdit #txtEditSN").attr("ReadOnly", true);;
-        })
+        });
+
+        $(document).on("click", "#Delete_data", function () {
+            var _no = $(this).data("id");
+            var _desc = $(this).data("nama");
+            var _fam = $(this).data("fam");
+            var _bu = $(this).data("bu");
+            var _line = $(this).data("line");
+            var _status = $(this).data("status");
+            var _oe = $(this).data("oe");
+            var _rfid = $(this).data("rfid");
+            var _co = $(this).data("co");
+            var _eam = $(this).data("eam");
+            var _agd = $(this).data("agd");
+        }
     </script>
     </form>
 </body>
