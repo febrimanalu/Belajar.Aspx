@@ -69,3 +69,7 @@ C:\Users\User\Documents\GitHub\Belajar.Aspx\Belajar.Aspx\obj\Debug\Belajar.Aspx.
 C:\Users\User\Documents\GitHub\Belajar.Aspx\Belajar.Aspx\obj\Debug\Belajar.Aspx.csproj.CopyComplete
 C:\Users\User\Documents\GitHub\Belajar.Aspx\Belajar.Aspx\obj\Debug\Belajar.Aspx.dll
 C:\Users\User\Documents\GitHub\Belajar.Aspx\Belajar.Aspx\obj\Debug\Belajar.Aspx.pdb
+C:\Users\fixtue\source\repos\Belajar.Aspx\Belajar.Aspx\bin\itextsharp.dll
+C:\Users\fixtue\source\repos\Belajar.Aspx\Belajar.Aspx\bin\Microsoft.Data.Tools.Components.dll
+C:\Users\fixtue\source\repos\Belajar.Aspx\Belajar.Aspx\bin\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll
+C:\Users\fixtue\source\repos\Belajar.Aspx\Belajar.Aspx\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
