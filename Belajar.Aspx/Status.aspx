@@ -14,6 +14,7 @@
     <!--Bootstrap CSS-->
     <link href="additional%20file/css/global.css" rel="stylesheet" />
     <link href="bootstrap4/css/bootstrap.css" rel="stylesheet" />
+    <link href="bootstrap4/css/bootstrap.min.css" rel="stylesheet" />
     <link href="additional%20file/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="additional%20file/DataTables-1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link href="additional%20file/Buttons-1.6.3/css/buttons.bootstrap4.min.css" rel="stylesheet" />
@@ -358,22 +359,23 @@
                             <button class="btn btn-secondary" data-dismiss="modal" aria-hidden="true">Cancel</button>
                             <asp:Button ID="btndel" OnClick="btndel_Click" CssClass="btn btn-danger" runat="server" Text="Yes" />
                         </div>
-                        <Triggers>
-                            <asp:AsyncPostBackTrigger ControlID="btndel" EventName="Click" />
-                        </Triggers>
-                        
                     </div>
                 </div>
             </div>
         </main>
         <footer></footer>
 
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="bootstrap4/js/bootstrap.bundle.min.js"></script>    
+
+
     <!--DataTables-->
     <script src="additional%20file/js/jquery-3.5.1.js"></script>
-    <script src="additional%20file/js/jquery-3.5.1.slim.min.js"></script>
-    <script src="additional%20file/js/popper.min.js"></script>
-    <script src="bootstrap4/js/bootstrap.min.js"></script>
-    <script src="additional%20file/js/jquery.dataTables.min.js"></script>
+    <script src="additional%20file/DataTables-1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="additional%20file/DataTables-1.10.21/js/dataTables.bootstrap4.min.js"></script>
     <script src="additional%20file/Buttons-1.6.3/js/dataTables.buttons.min.js"></script>
     <script src="additional%20file/Buttons-1.6.3/js/buttons.bootstrap4.min.js"></script>
     <script src="additional%20file/JSZip-2.5.0/jszip.min.js"></script>
@@ -386,8 +388,11 @@
     <script>
         $(document).ready(function () {
             var table = $('#myTable').DataTable({
-                lengthChange: false,
-                buttons: ['copy', 'excel', 'pdf', 'doc']
+                buttons: ['copy', 'csv', 'excel', 'pdf', 'print', 'colvis'],
+                dom:
+                "<'row'<'col-md-3'l><'col-md-5'B><'col-md-4'f>>" +
+                "<'row'<'col-md-12'tr>>" +
+                "<'row'<'col-md-5'i><'col-md-7'p>>"
             });
 
             table.buttons().container()
