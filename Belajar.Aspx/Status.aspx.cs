@@ -7,6 +7,10 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.html.simpleparser;
 using Belajar.Aspx.classes;
 
 namespace Belajar.Aspx
@@ -61,6 +65,13 @@ namespace Belajar.Aspx
         protected void btnDelete_Click(object sender, EventArgs e)
         {
             ClsStatus.DeleteData(Convert.ToString(txtEditSN.Text));
+            DtStatus();
+            Clear();
+        }
+
+        protected void btndel_Click(object sender, EventArgs e)
+        {
+            ClsStatus.DelData(Convert.ToString(txtEditSN.Text));
             DtStatus();
             Clear();
         }

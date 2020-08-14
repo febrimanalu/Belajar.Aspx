@@ -73,3 +73,7 @@ C:\Users\fixtue\source\repos\Belajar.Aspx\Belajar.Aspx\bin\itextsharp.dll
 C:\Users\fixtue\source\repos\Belajar.Aspx\Belajar.Aspx\bin\Microsoft.Data.Tools.Components.dll
 C:\Users\fixtue\source\repos\Belajar.Aspx\Belajar.Aspx\bin\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll
 C:\Users\fixtue\source\repos\Belajar.Aspx\Belajar.Aspx\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\fixtue\source\repos\Belajar.Aspx\Belajar.Aspx\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\fixtue\source\repos\Belajar.Aspx\Belajar.Aspx\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\fixtue\source\repos\Belajar.Aspx\Belajar.Aspx\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\fixtue\source\repos\Belajar.Aspx\Belajar.Aspx\bin\Microsoft.ReportViewer.WinForms.dll

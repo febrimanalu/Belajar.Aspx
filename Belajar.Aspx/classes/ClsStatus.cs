@@ -93,5 +93,25 @@ namespace Belajar.Aspx.classes
                 throw ex;
             }
         }
+
+        public static void DelData(string no)
+        {
+            try
+            {
+                SqlConnection sqlconn = new SqlConnection(ClsModule.conn.ToString());
+                SqlCommand sqlcmd = new SqlCommand();
+
+                sqlconn.Open();
+                sqlcmd.Connection = sqlconn;
+                sqlcmd.CommandType = CommandType.Text;
+                sqlcmd.CommandText = "delete from Status where SN ='" + no + "'";
+                sqlcmd.ExecuteNonQuery();
+                sqlconn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
