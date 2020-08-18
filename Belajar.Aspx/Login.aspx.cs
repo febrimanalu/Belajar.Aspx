@@ -24,7 +24,7 @@ namespace Belajar.Aspx
 
             if(dtLogin.Rows.Count != 0)
             {
-                Response.Redirect("~/Dashboard.aspx");
+                Response.Redirect("~/Status.aspx");
             }
             else
             {

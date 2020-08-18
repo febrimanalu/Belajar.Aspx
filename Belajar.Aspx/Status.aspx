@@ -62,12 +62,12 @@
                     </div>
                 </div>
             </div>
-            <div class="ml-5 mt-5 mr-5 mb-5">
+            <div class="ml-1 mt-5 mr-1 mb-5">
                 <asp:Repeater ID="RptStatus" runat="server">
                     <HeaderTemplate>
                         <table id="myTable" class="table table-striped table-hover table-bordered">
                             <thead>
-                                <tr>
+                                <tr role="row">
                                     <th>No</th>
                                     <th>SN</th>
                                     <th>Description</th>
@@ -388,11 +388,17 @@
     <script>
         $(document).ready(function () {
             var table = $('#myTable').DataTable({
-                buttons: ['copy', 'csv', 'excel', 'pdf', 'print', 'colvis'],
+                buttons: ['copy', 'csv', 'excel',
+                    {
+                        extend: 'pdfHtml5',
+                        orientation: 'landscape',
+                        pageSize: 'LEGAL',
+                        except: ''
+                    }, 'print'],
                 dom:
-                "<'row'<'col-md-3'l><'col-md-5'B><'col-md-4'f>>" +
+                "<'row'<'col-md-4'l><'col-md-4'B><'col-md-4'f>>" +
                 "<'row'<'col-md-12'tr>>" +
-                "<'row'<'col-md-5'i><'col-md-7'p>>"
+                "<'row'<'col-md-7'i><'col-md-5'p>>"
             });
 
             table.buttons().container()
