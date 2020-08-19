@@ -77,3 +77,8 @@ C:\Users\fixtue\source\repos\Belajar.Aspx\Belajar.Aspx\bin\Microsoft.ReportViewe
 C:\Users\fixtue\source\repos\Belajar.Aspx\Belajar.Aspx\bin\Microsoft.ReportViewer.DataVisualization.dll
 C:\Users\fixtue\source\repos\Belajar.Aspx\Belajar.Aspx\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
 C:\Users\fixtue\source\repos\Belajar.Aspx\Belajar.Aspx\bin\Microsoft.ReportViewer.WinForms.dll
+C:\Users\User\Documents\GitHub\Belajar.Aspx\Belajar.Aspx\bin\Microsoft.Data.Tools.Components.dll
+C:\Users\User\Documents\GitHub\Belajar.Aspx\Belajar.Aspx\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\User\Documents\GitHub\Belajar.Aspx\Belajar.Aspx\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\User\Documents\GitHub\Belajar.Aspx\Belajar.Aspx\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\User\Documents\GitHub\Belajar.Aspx\Belajar.Aspx\bin\Microsoft.ReportViewer.WinForms.dll
