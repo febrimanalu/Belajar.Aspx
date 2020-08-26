@@ -63,6 +63,8 @@
                 </div>
             </div>
             <div class="ml-1 mt-5 mr-1 mb-5">
+                <button class="btn btn-info" type="button" data-target="#ModalCreate" data-toggle="modal">Create Data</button>
+                <br />
                 <asp:Repeater ID="RptStatus" runat="server">
                     <HeaderTemplate>
                         <table id="myTable" class="table table-striped table-hover table-bordered">
@@ -128,7 +130,6 @@
                         </table>
                     </FooterTemplate>
                 </asp:Repeater>
-                <button class="btn btn-info" type="button" data-target="#ModalCreate" data-toggle="modal">Create Data</button>
             </div>
             <!--Modal Create-->
             <div class="modal fade" id="ModalCreate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -282,7 +283,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <asp:Label ID="Label16" runat="server" Text="BU Line"></asp:Label>
+                                                <asp:Label ID="Label16" runat="server" Text="BU_Line"></asp:Label>
                                                 <asp:TextBox ID="txtEditLine" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
@@ -300,13 +301,13 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <asp:Label ID="Label18" runat="server" Text="Owner Engineer"></asp:Label>
+                                                <asp:Label ID="Label18" runat="server" Text="Owner_Engineer"></asp:Label>
                                                 <asp:TextBox ID="txtEditOE" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <asp:Label ID="Label19" runat="server" Text="RF ID"></asp:Label>
+                                                <asp:Label ID="Label19" runat="server" Text="RF_ID"></asp:Label>
                                                 <asp:TextBox ID="txtEditRFID" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
@@ -324,7 +325,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <asp:Label ID="Label22" runat="server" Text="Asset Group Description"></asp:Label>
+                                                <asp:Label ID="Label22" runat="server" Text="Asset_Group_Description"></asp:Label>
                                                 <asp:TextBox ID="txtEditAGD" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
