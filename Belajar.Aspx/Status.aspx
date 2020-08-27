@@ -13,11 +13,12 @@
 
     <!--Bootstrap CSS-->
     <link href="additional%20file/css/global.css" rel="stylesheet" />
-    <link href="bootstrap4/css/bootstrap.css" rel="stylesheet" />
-    <link href="bootstrap4/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="additional%20file/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <link href="additional%20file/DataTables-1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
-    <link href="additional%20file/Buttons-1.6.3/css/buttons.bootstrap4.min.css" rel="stylesheet" />
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="another/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="another/DataTables-1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="another/button/css/buttons.bootstrap4.min.css" rel="stylesheet" />
+    
 </head>
 <body class="bd">
     <form id="form1" runat="server">
@@ -75,13 +76,13 @@
                                     <th>Description</th>
                                     <th>Family</th>
                                     <th>BU</th>
-                                    <th>BU Line</th>
+                                    <th>BU_Line</th>
                                     <th>Status</th>
-                                    <th>Owner Engineer</th>
-                                    <th>RF ID</th>
+                                    <th>Owner_Engineer</th>
+                                    <th>RF_ID</th>
                                     <th>CO</th>
                                     <th>EAM</th>
-                                    <th>Asset Group Description</th>
+                                    <th>Asset_Group_Desc</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -133,7 +134,7 @@
             </div>
             <!--Modal Create-->
             <div class="modal fade" id="ModalCreate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
+                <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                         <div class="modal-header alert-info">
                             <h5 class="modal-title" id="exampleModalLabel">Form Create Data</h5>
@@ -145,25 +146,25 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label1" runat="server" Text="SN"></asp:Label>
                                                 <asp:TextBox ID="txtSN" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label2" runat="server" Text="Description"></asp:Label>
                                                 <asp:TextBox ID="txtDesc" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label3" runat="server" Text="Family"></asp:Label>
                                                 <asp:TextBox ID="txtFam" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label4" runat="server" Text="BU"></asp:Label>
                                                 <asp:DropDownList ID="ddlBU" CssClass="form-control" runat="server">
@@ -176,13 +177,13 @@
                                                 </asp:DropDownList>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label5" runat="server" Text="BU Line"></asp:Label>
                                                 <asp:TextBox ID="txtBULine" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label6" runat="server" Text="Status"></asp:Label>
                                                 <asp:DropDownList ID="ddlStatus" CssClass="form-control" runat="server">
@@ -194,31 +195,31 @@
                                                 </asp:DropDownList>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label7" runat="server" Text="Owner Engineer"></asp:Label>
                                                 <asp:TextBox ID="txtOE" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label8" runat="server" Text="RF ID"></asp:Label>
                                                 <asp:TextBox ID="txtRFID" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label9" runat="server" Text="CO"></asp:Label>
                                                 <asp:TextBox ID="txtCO" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label10" runat="server" Text="EAM"></asp:Label>
                                                 <asp:TextBox ID="txtEAM" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label11" runat="server" Text="Asset Group Description"></asp:Label>
                                                 <asp:TextBox ID="txtAssetGD" CssClass="form-control" runat="server"></asp:TextBox>
@@ -370,17 +371,18 @@
 
 
     <!--DataTables-->
-    <script src="additional%20file/js/jquery-3.5.1.js"></script>
-    <script src="additional%20file/DataTables-1.10.21/js/jquery.dataTables.min.js"></script>
-    <script src="additional%20file/DataTables-1.10.21/js/dataTables.bootstrap4.min.js"></script>
-    <script src="additional%20file/Buttons-1.6.3/js/dataTables.buttons.min.js"></script>
-    <script src="additional%20file/Buttons-1.6.3/js/buttons.bootstrap4.min.js"></script>
-    <script src="additional%20file/JSZip-2.5.0/jszip.min.js"></script>
-    <script src="additional%20file/pdfmake-0.1.36/pdfmake.min.js"></script>
-    <script src="additional%20file/pdfmake-0.1.36/vfs_fonts.js"></script>
-    <script src="additional%20file/Buttons-1.6.3/js/buttons.html5.min.js"></script>
-    <script src="additional%20file/Buttons-1.6.3/js/buttons.print.min.js"></script>
-    <script src="additional%20file/Buttons-1.6.3/js/buttons.colVis.min.js"></script>
+    <script src="another/js/jquery-3.5.1.js"></script>
+    <script src="another/DataTables-1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="another/DataTables-1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <script src="another/button/js/dataTables.buttons.min.js"></script>
+    <script src="another/button/js/buttons.bootstrap4.min.js"></script>
+    <script src="another/datatables/jszip.min.js"></script>
+    <script src="another/datatables/pdfmake.min.js"></script>
+    <script src="another/datatables/vfs_fonts.js"></script>
+    <script src="another/button/js/buttons.html5.min.js"></script>
+    <script src="another/button/js/buttons.print.min.js"></script>
+    <script src="another/button/js/buttons.colVis.min.js"></script>
+  
 
     <script>
         $(document).ready(function () {
