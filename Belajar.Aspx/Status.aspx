@@ -12,9 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!--Bootstrap CSS-->
-    <link href="additional%20file/css/global.css" rel="stylesheet" />
+    <link href="another/css/global.css" rel="stylesheet" />
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="another/datatables/responsive.bootstrap4.min.css" rel="stylesheet" />
     <link href="another/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="another/DataTables-1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link href="another/button/css/buttons.bootstrap4.min.css" rel="stylesheet" />
@@ -68,10 +69,9 @@
                 <br />
                 <asp:Repeater ID="RptStatus" runat="server">
                     <HeaderTemplate>
-                        <table id="myTable" class="table table-striped table-hover table-bordered">
+                        <table id="myTable" class="table table-striped table-bordered dt-responsive nowrap" width:100%">
                             <thead>
                                 <tr role="row">
-                                    <th>No</th>
                                     <th>SN</th>
                                     <th>Description</th>
                                     <th>Family</th>
@@ -90,7 +90,6 @@
                     </HeaderTemplate>
                     <ItemTemplate>
                                 <tr>
-                                    <td> &nbsp &nbsp<%# Container.ItemIndex + 1 %></td>
                                     <td>
                                         <a href='<%# "Dashboard.aspx?ID=" + Eval ("SN")  %>' target="_blank"><%# Eval ("SN") %></a>
                                     </td>
@@ -374,6 +373,8 @@
     <script src="another/js/jquery-3.5.1.js"></script>
     <script src="another/DataTables-1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="another/DataTables-1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <script src="another/datatables/dataTables.responsive.min.js"></script>
+    <script src="another/datatables/responsive.bootstrap4.min.js"></script>
     <script src="another/button/js/dataTables.buttons.min.js"></script>
     <script src="another/button/js/buttons.bootstrap4.min.js"></script>
     <script src="another/datatables/jszip.min.js"></script>

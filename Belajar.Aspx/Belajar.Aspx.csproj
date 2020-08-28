@@ -170,6 +170,8 @@
     <Content Include="another\datatables\pdfmake.min.js" />
     <Content Include="another\datatables\responsive.bootstrap.min.css" />
     <Content Include="another\datatables\responsive.bootstrap.min.js" />
+    <Content Include="another\datatables\responsive.bootstrap4.min.css" />
+    <Content Include="another\datatables\responsive.bootstrap4.min.js" />
     <Content Include="another\datatables\scroller.bootstrap.min.css" />
     <Content Include="another\datatables\select2.min.js" />
     <Content Include="another\datatables\vfs_fonts.js" />
