@@ -6,10 +6,14 @@
 <head runat="server">
     <title>FLEXTRONICS</title>
     <link rel="shortcut icon" href="img/flex.png" />
+
+    <!--Required meta tags-->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link href="bootstrap4/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="additional%20file/css/global.css" rel="stylesheet" />
+
+    <!--Bootstrap CSS-->
+    <link href="another/css/global.css" rel="stylesheet" />
+    <link href="another/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container-fluid bg">
@@ -34,6 +38,8 @@
 
             </div>
         </div>
-    <script src="bootstrap4/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript JS -->
+    <script src="another/js/bootstrap.min.js"></script>
 </body>
 </html>

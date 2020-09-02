@@ -14,11 +14,10 @@
     <!--Bootstrap CSS-->
     <link href="another/css/global.css" rel="stylesheet" />
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="another/datatables/responsive.bootstrap4.min.css" rel="stylesheet" />
     <link href="another/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="another/DataTables-1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link href="another/button/css/buttons.bootstrap4.min.css" rel="stylesheet" />
+    <link href="another/datatables/responsive.bootstrap4.min.css" rel="stylesheet" />
     
 </head>
 <body class="bd">
@@ -41,7 +40,7 @@
                 </div>
             </nav>
         </header>
-        <main>
+        <main role="row">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
                     <div class="boxDiv">
@@ -107,7 +106,7 @@
                                          &nbsp
                                         <a id="Edit_data" data-toggle="modal" data-target="#ModalEdit" onclick="Edit_data" class="alert-info" data-id="<%# Eval("SN") %>"
                                         data-nama="<%# Eval("Description") %>" data-fam="<%# Eval("Family") %>" data-bu="<%# Eval("BU") %>" data-line="<%# Eval("BU_Line") %>" data-status="<%# Eval("Status") %>"
-                                        data-oe="<%# Eval("Owner_Engineer") %>" data-rfid="<%# Eval("RF_ID") %>" data-co="<%# Eval("SN") %>" data-eam="<%# Eval("EAM") %>" data-agd="<%# Eval("Asset_Group_Description") %>">
+                                        data-oe="<%# Eval("Owner_Engineer") %>" data-rfid="<%# Eval("RF_ID") %>" data-co="<%# Eval("CO") %>" data-eam="<%# Eval("EAM") %>" data-agd="<%# Eval("Asset_Group_Description") %>">
                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                             <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
@@ -178,7 +177,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label5" runat="server" Text="BU Line"></asp:Label>
+                                                <asp:Label ID="Label5" runat="server" Text="BU_Line"></asp:Label>
                                                 <asp:TextBox ID="txtBULine" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
@@ -196,13 +195,13 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label7" runat="server" Text="Owner Engineer"></asp:Label>
+                                                <asp:Label ID="Label7" runat="server" Text="Owner_Engineer"></asp:Label>
                                                 <asp:TextBox ID="txtOE" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label8" runat="server" Text="RF ID"></asp:Label>
+                                                <asp:Label ID="Label8" runat="server" Text="RF_ID"></asp:Label>
                                                 <asp:TextBox ID="txtRFID" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
@@ -220,7 +219,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label11" runat="server" Text="Asset Group Description"></asp:Label>
+                                                <asp:Label ID="Label11" runat="server" Text="Asset_Group_Description"></asp:Label>
                                                 <asp:TextBox ID="txtAssetGD" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
@@ -232,13 +231,13 @@
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                             <asp:Button ID="btnSave" OnClick="btnSave_Click" CssClass="btn btn-success" runat="server" Text="Save" />
                         </div>
+                    </div>
                 </div>
-            </div>
             </div>
 
             <!--Modal Edit-->
             <div class="modal fade" id="ModalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
+                <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                         <div class="modal-header alert-info">
                             <h5 class="modal-title">Form Edit Data</h5>
@@ -250,25 +249,25 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label12" runat="server" Text="SN"></asp:Label>
                                                 <asp:TextBox ID="txtEditSN" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label13" runat="server" Text="Description"></asp:Label>
                                                 <asp:TextBox ID="txtEditDesc" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label14" runat="server" Text="Family"></asp:Label>
                                                 <asp:TextBox ID="txtEditFam" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label15" runat="server" Text="BU"></asp:Label>
                                                 <asp:DropDownList ID="ddlEditBU" ClientIDMode="Static" CssClass="form-control" runat="server">
@@ -281,16 +280,16 @@
                                                 </asp:DropDownList>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label16" runat="server" Text="BU_Line"></asp:Label>
-                                                <asp:TextBox ID="txtEditLine" CssClass="form-control" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtEditLine" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label17" runat="server" Text="Status"></asp:Label>
-                                                <asp:DropDownList ID="ddlEditStatus" CssClass="form-control" runat="server">
+                                                <asp:DropDownList ID="ddlEditStatus" ClientIDMode="Static" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
                                                     <asp:ListItem>ACTIVE</asp:ListItem>
                                                     <asp:ListItem>EOL</asp:ListItem>
@@ -299,34 +298,34 @@
                                                 </asp:DropDownList>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label18" runat="server" Text="Owner_Engineer"></asp:Label>
-                                                <asp:TextBox ID="txtEditOE" CssClass="form-control" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtEditOE" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label19" runat="server" Text="RF_ID"></asp:Label>
-                                                <asp:TextBox ID="txtEditRFID" CssClass="form-control" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtEditRFID" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label20" runat="server" Text="CO"></asp:Label>
-                                                <asp:TextBox ID="txtEditCO" CssClass="form-control" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtEditCO" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label21" runat="server" Text="EAM"></asp:Label>
-                                                <asp:TextBox ID="txtEditEAM" CssClass="form-control" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtEditEAM" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label22" runat="server" Text="Asset_Group_Description"></asp:Label>
-                                                <asp:TextBox ID="txtEditAGD" CssClass="form-control" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtEditAGD" ClientIDMode="Static" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
@@ -373,8 +372,6 @@
     <script src="another/js/jquery-3.5.1.js"></script>
     <script src="another/DataTables-1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="another/DataTables-1.10.21/js/dataTables.bootstrap4.min.js"></script>
-    <script src="another/datatables/dataTables.responsive.min.js"></script>
-    <script src="another/datatables/responsive.bootstrap4.min.js"></script>
     <script src="another/button/js/dataTables.buttons.min.js"></script>
     <script src="another/button/js/buttons.bootstrap4.min.js"></script>
     <script src="another/datatables/jszip.min.js"></script>
@@ -383,6 +380,8 @@
     <script src="another/button/js/buttons.html5.min.js"></script>
     <script src="another/button/js/buttons.print.min.js"></script>
     <script src="another/button/js/buttons.colVis.min.js"></script>
+    <script src="another/datatables/dataTables.responsive.min.js"></script>
+    <script src="another/datatables/responsive.bootstrap4.min.js"></script>
   
 
     <script>
